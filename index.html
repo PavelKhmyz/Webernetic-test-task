@@ -4,8 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Webernetic test task</title>
+    <link rel="stylesheet" href="./src/style.scss">
   </head>
   <body>
+    <section class="demo">
+
+      <section class="demo__information">
+        <h1 class="demo__title">Демо-версия</h1>
+        <p class="demo__text">
+          За 18 лет деятельности было реализовано более 500 крупных, а так же, не менее 2500 средних и малых проектов. 
+          Используя знания и накопленный опыт мы можем предложить.
+        </p>
+        <button type="button" class="modal-button">
+          <span class="modal-button__text">Попробовать бесплатно</span>
+          <div class="modal-button__arrow-logo">
+            <img src="./public/arrow-up-right.svg" alt="arrow up">
+          </div>
+        </button>
+      </section>
+  
+      <picture class="demo__picture">
+        <source srcset="./public/pcImage_middle.png" media="(max-width: 1440px)">
+        <source srcset="./public/pcImage_big.png">
+        <img src="./public/pcImage_big.png" alt="PC Image">
+      </picture>
+  
+    </section>
 
   </body>
 </html>
