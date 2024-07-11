@@ -3,7 +3,7 @@
   width: 100%;
   height: 100vh;
   padding: 10px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -19,6 +19,7 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   @media (max-width: 400px) {
     padding: 10px;
@@ -68,6 +69,21 @@
     &::placeholder {
       color: #1F4284;
     }
+  }
+
+  &__input_error {
+    border: 2px solid red;
+    color: red;
+
+    &::placeholder {
+      color: red;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    color: red;
+    top: 263px;
   }
 
   &__checkbox-wrapper {

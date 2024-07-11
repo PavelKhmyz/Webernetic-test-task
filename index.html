@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Webernetic test task</title>
-    <link rel="stylesheet" href="./src/style.scss">
+    <link rel="stylesheet" href="./public/style.scss">
   </head>
   <body>
     <section class="demo">
@@ -18,15 +18,15 @@
         <button type="button" class="modal-button">
           <span class="modal-button__text">Попробовать бесплатно</span>
           <div class="modal-button__arrow-logo">
-            <img src="./public/arrow-up-right.svg" alt="arrow up">
+            <img src="./arrow-up-right.svg" alt="arrow up">
           </div>
         </button>
       </section>
   
       <picture class="demo__picture">
-        <source srcset="./public/pcImage_middle.png" media="(max-width: 1440px)">
-        <source srcset="./public/pcImage_big.png">
-        <img src="./public/pcImage_big.png" alt="PC Image">
+        <source srcset="./pcImage_middle.png" media="(max-width: 1440px)">
+        <source srcset="./pcImage_big.png">
+        <img src="./pcImage_big.png" alt="PC Image">
       </picture>
   
     </section>
@@ -34,13 +34,14 @@
     <div class="modal-overlay">
       <section class="modal">
         <button class="modal__close-button" type="button">
-          <img src="./public/close.svg" alt="close logo">
+          <img src="./close.svg" alt="close logo">
         </button>
         <p class="modal__text">Войти в систему</p>
-        <input class="modal__input" type="text" placeholder="Email/Телефон">
-        <input class="modal__input" type="password" placeholder="Пароль">
+        <input class="modal__input" type="text" placeholder="Email/Телефон" id="loginInput">
+        <input class="modal__input" type="password" placeholder="Пароль" id="passwordInput">
+        <p class="modal__error"></p>
         <div class="modal__checkbox-wrapper">
-          <input class="modal__checkbox" type="checkbox" name="rememberMe">
+          <input class="modal__checkbox" type="checkbox" id="rememberMe">
           <label class="modal__label" for="rememberMe">Запомнить пароль</label>
         </div>
         <a class="modal__restore-password" href="/">Восстановить</a>
@@ -48,6 +49,9 @@
         <button class="modal__button" type="button">Зарегистрироваться</button>
       </section>
     </div>
+
+    <script type="module" src="./src/modal/modal.ts"></script>
+    <script type="module" src="./src/modal/login.ts"></script>
 
   </body>
 </html>
