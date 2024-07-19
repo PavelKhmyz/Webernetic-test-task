@@ -6,7 +6,7 @@ document.getElementById('passwordInput')?.addEventListener('blur', (event: Event
 document.getElementById('loginInput')?.addEventListener('focus', () => loginFocus());
 document.getElementById('passwordInput')?.addEventListener('focus', () => passwordFocus());
 
-document.querySelector('.modal__button_blue')?.addEventListener('click', () => submitForm());
+document.querySelector('.login-form__button_blue')?.addEventListener('click', () => submitForm());
 
 const LOGIN_LENGTH = 4;
 const PASSWORD_LENGTH = 4;
@@ -15,7 +15,7 @@ const loginFocus = () => {
   const input: HTMLElement | null = document.getElementById('loginInput');
 
   if(input) {
-    input.classList.remove('modal__input_error');
+    input.classList.remove('login-form__input_error');
   }  
 }
 
@@ -23,33 +23,33 @@ const passwordFocus = () => {
   const input: HTMLElement | null = document.getElementById('passwordInput');
 
   if(input) {
-    input.classList.remove('modal__input_error');
+    input.classList.remove('login-form__input_error');
   }  
 }
 
 const loginValidator = (value: string): boolean => {
   const input: HTMLElement | null = document.getElementById('loginInput');
-  const error: HTMLElement | null = document.querySelector('.modal__error');
+  const error: HTMLElement | null = document.querySelector('.login-form__error');
 
   if(!input || !error) {
     return false;
   }
 
   if(!value) {
-    input.classList.add('modal__input_error')
+    input.classList.add('login-form__input_error')
     error.innerText = 'Введите email или телефон';
 
     return false;
   }
 
   if(value.length < LOGIN_LENGTH) {
-    input.classList.add('modal__input_error')
+    input.classList.add('login-form__input_error')
     error.innerText = `Логин должен содержать больше ${LOGIN_LENGTH - 1} символов`;
 
     return false;
   }
 
-  input.classList.remove('modal__input_error');
+  input.classList.remove('login-form__input_error');
   error.innerText = '';
 
   return true;
@@ -57,27 +57,27 @@ const loginValidator = (value: string): boolean => {
 
 const passwordValidator = (value: string): boolean => {
   const input: HTMLElement | null = document.getElementById('passwordInput');
-  const error: HTMLElement | null = document.querySelector('.modal__error');
+  const error: HTMLElement | null = document.querySelector('.login-form__error');
 
   if(!input || !error) {
     return false;
   }
 
   if(!value) {
-    input.classList.add('modal__input_error')
+    input.classList.add('login-form__input_error')
     error.innerText = 'Введите пароль';
 
     return false;
   }
 
   if(value.length < PASSWORD_LENGTH) {
-    input.classList.add('modal__input_error')
+    input.classList.add('login-form__input_error')
     error.innerText = `Пароль должен содержать больше ${PASSWORD_LENGTH - 1} символов`;
 
     return false;
   }
 
-  input.classList.remove('modal__input_error');
+  input.classList.remove('login-form__input_error');
   error.innerText = '';
 
   return true;
